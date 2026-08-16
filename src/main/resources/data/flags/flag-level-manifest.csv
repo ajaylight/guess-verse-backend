@@ -1,0 +1,201 @@
+level,question_number,country,country_code,difficulty,image_name,repeat
+1,1,Argentina,ar,EASY,ar.png,False
+1,2,Australia,au,EASY,au.png,False
+1,3,Austria,at,EASY,at.png,False
+1,4,Belgium,be,EASY,be.png,False
+1,5,Brazil,br,EASY,br.png,False
+1,6,Canada,ca,EASY,ca.png,False
+1,7,China,cn,EASY,cn.png,False
+1,8,Denmark,dk,EASY,dk.png,False
+1,9,Egypt,eg,EASY,eg.png,False
+1,10,Finland,fi,EASY,fi.png,False
+2,1,France,fr,EASY,fr.png,False
+2,2,Germany,de,EASY,de.png,False
+2,3,Greece,gr,EASY,gr.png,False
+2,4,India,in,EASY,in.png,False
+2,5,Indonesia,id,EASY,id.png,False
+2,6,Ireland,ie,EASY,ie.png,False
+2,7,Italy,it,EASY,it.png,False
+2,8,Japan,jp,EASY,jp.png,False
+2,9,Mexico,mx,EASY,mx.png,False
+2,10,Netherlands,nl,EASY,nl.png,False
+3,1,New Zealand,nz,EASY,nz.png,False
+3,2,Norway,no,EASY,no.png,False
+3,3,Pakistan,pk,EASY,pk.png,False
+3,4,Philippines,ph,EASY,ph.png,False
+3,5,Poland,pl,EASY,pl.png,False
+3,6,Portugal,pt,EASY,pt.png,False
+3,7,Russia,ru,EASY,ru.png,False
+3,8,Saudi Arabia,sa,EASY,sa.png,False
+3,9,South Africa,za,EASY,za.png,False
+3,10,South Korea,kr,EASY,kr.png,False
+4,1,Spain,es,EASY,es.png,False
+4,2,Sweden,se,EASY,se.png,False
+4,3,Switzerland,ch,EASY,ch.png,False
+4,4,Thailand,th,EASY,th.png,False
+4,5,Turkey,tr,EASY,tr.png,False
+4,6,Ukraine,ua,EASY,ua.png,False
+4,7,United Arab Emirates,ae,EASY,ae.png,False
+4,8,United Kingdom,gb,EASY,gb.png,False
+4,9,United States,us,EASY,us.png,False
+4,10,Hong Kong,hk,EASY,hk.png,False
+5,1,Vietnam,vn,MEDIUM,vn.png,False
+5,2,Angola,ao,MEDIUM,ao.png,False
+5,3,Bangladesh,bd,MEDIUM,bd.png,False
+5,4,Belarus,by,MEDIUM,by.png,False
+5,5,Bulgaria,bg,MEDIUM,bg.png,False
+5,6,Cambodia,kh,MEDIUM,kh.png,False
+5,7,Cameroon,cm,MEDIUM,cm.png,False
+5,8,Chile,cl,MEDIUM,cl.png,False
+5,9,Colombia,co,MEDIUM,co.png,False
+5,10,Congo,cg,MEDIUM,cg.png,False
+6,1,Costa Rica,cr,MEDIUM,cr.png,False
+6,2,Croatia,hr,MEDIUM,hr.png,False
+6,3,Cuba,cu,MEDIUM,cu.png,False
+6,4,Cyprus,cy,MEDIUM,cy.png,False
+6,5,Czech Republic,cz,MEDIUM,cz.png,False
+6,6,Cote d'Ivoire,ci,MEDIUM,ci.png,False
+6,7,Ecuador,ec,MEDIUM,ec.png,False
+6,8,El Salvador,sv,MEDIUM,sv.png,False
+6,9,Estonia,ee,MEDIUM,ee.png,False
+6,10,Ethiopia,et,MEDIUM,et.png,False
+7,1,Israel,il,MEDIUM,il.png,False
+7,2,Kenya,ke,MEDIUM,ke.png,False
+7,3,Malaysia,my,MEDIUM,my.png,False
+7,4,Morocco,ma,MEDIUM,ma.png,False
+7,5,Serbia,rs,MEDIUM,rs.png,False
+7,6,Afghanistan,af,MEDIUM,af.png,False
+7,7,Albania,al,MEDIUM,al.png,False
+7,8,Algeria,dz,MEDIUM,dz.png,False
+7,9,Andorra,ad,MEDIUM,ad.png,False
+7,10,Antigua and Barbuda,ag,MEDIUM,ag.png,False
+8,1,Armenia,am,MEDIUM,am.png,False
+8,2,Azerbaijan,az,MEDIUM,az.png,False
+8,3,Bahamas,bs,MEDIUM,bs.png,False
+8,4,Bahrain,bh,MEDIUM,bh.png,False
+8,5,Barbados,bb,MEDIUM,bb.png,False
+8,6,Belize,bz,MEDIUM,bz.png,False
+8,7,Benin,bj,MEDIUM,bj.png,False
+8,8,Bhutan,bt,MEDIUM,bt.png,False
+8,9,Bolivia,bo,MEDIUM,bo.png,False
+8,10,Palestine,ps,MEDIUM,ps.png,False
+9,1,Bosnia and Herzegovina,ba,MEDIUM,ba.png,False
+9,2,Botswana,bw,MEDIUM,bw.png,False
+9,3,Brunei,bn,MEDIUM,bn.png,False
+9,4,Burkina Faso,bf,MEDIUM,bf.png,False
+9,5,Burundi,bi,MEDIUM,bi.png,False
+9,6,Cabo Verde,cv,MEDIUM,cv.png,False
+9,7,Central African Republic,cf,MEDIUM,cf.png,False
+9,8,Chad,td,MEDIUM,td.png,False
+9,9,Comoros,km,MEDIUM,km.png,False
+9,10,Democratic Republic of the Congo,cd,MEDIUM,cd.png,False
+10,1,Djibouti,dj,MEDIUM,dj.png,False
+10,2,Dominica,dm,MEDIUM,dm.png,False
+10,3,Dominican Republic,do,MEDIUM,do.png,False
+10,4,Equatorial Guinea,gq,MEDIUM,gq.png,False
+10,5,Eritrea,er,MEDIUM,er.png,False
+10,6,Eswatini,sz,MEDIUM,sz.png,False
+10,7,Fiji,fj,MEDIUM,fj.png,False
+10,8,Gabon,ga,MEDIUM,ga.png,False
+10,9,Gambia,gm,MEDIUM,gm.png,False
+10,10,Georgia,ge,MEDIUM,ge.png,False
+11,1,Ghana,gh,MEDIUM,gh.png,False
+11,2,Grenada,gd,MEDIUM,gd.png,False
+11,3,Guatemala,gt,MEDIUM,gt.png,False
+11,4,Guinea,gn,MEDIUM,gn.png,False
+11,5,Guinea-Bissau,gw,MEDIUM,gw.png,False
+11,6,Guyana,gy,MEDIUM,gy.png,False
+11,7,Haiti,ht,MEDIUM,ht.png,False
+11,8,Honduras,hn,MEDIUM,hn.png,False
+11,9,Hungary,hu,MEDIUM,hu.png,False
+11,10,Iceland,is,MEDIUM,is.png,False
+12,1,Iran,ir,MEDIUM,ir.png,False
+12,2,Iraq,iq,MEDIUM,iq.png,False
+12,3,Jamaica,jm,MEDIUM,jm.png,False
+12,4,Jordan,jo,MEDIUM,jo.png,False
+12,5,Kazakhstan,kz,MEDIUM,kz.png,False
+12,6,Kiribati,ki,MEDIUM,ki.png,False
+12,7,Kuwait,kw,MEDIUM,kw.png,False
+12,8,Kyrgyzstan,kg,MEDIUM,kg.png,False
+12,9,Laos,la,MEDIUM,la.png,False
+12,10,Kosovo,xk,MEDIUM,xk.png,False
+13,1,Latvia,lv,HARD,lv.png,False
+13,2,Lebanon,lb,HARD,lb.png,False
+13,3,Lesotho,ls,HARD,ls.png,False
+13,4,Liberia,lr,HARD,lr.png,False
+13,5,Libya,ly,HARD,ly.png,False
+13,6,Liechtenstein,li,HARD,li.png,False
+13,7,Lithuania,lt,HARD,lt.png,False
+13,8,Luxembourg,lu,HARD,lu.png,False
+13,9,Madagascar,mg,HARD,mg.png,False
+13,10,Malawi,mw,HARD,mw.png,False
+14,1,Maldives,mv,HARD,mv.png,False
+14,2,Mali,ml,HARD,ml.png,False
+14,3,Malta,mt,HARD,mt.png,False
+14,4,Marshall Islands,mh,HARD,mh.png,False
+14,5,Mauritania,mr,HARD,mr.png,False
+14,6,Mauritius,mu,HARD,mu.png,False
+14,7,Micronesia,fm,HARD,fm.png,False
+14,8,Moldova,md,HARD,md.png,False
+14,9,Monaco,mc,HARD,mc.png,False
+14,10,Mongolia,mn,HARD,mn.png,False
+15,1,Montenegro,me,HARD,me.png,False
+15,2,Mozambique,mz,HARD,mz.png,False
+15,3,Myanmar,mm,HARD,mm.png,False
+15,4,Namibia,na,HARD,na.png,False
+15,5,Nauru,nr,HARD,nr.png,False
+15,6,Nepal,np,HARD,np.png,False
+15,7,Nicaragua,ni,HARD,ni.png,False
+15,8,Niger,ne,HARD,ne.png,False
+15,9,Nigeria,ng,HARD,ng.png,False
+15,10,North Korea,kp,HARD,kp.png,False
+16,1,North Macedonia,mk,HARD,mk.png,False
+16,2,Oman,om,HARD,om.png,False
+16,3,Palau,pw,HARD,pw.png,False
+16,4,Panama,pa,HARD,pa.png,False
+16,5,Papua New Guinea,pg,HARD,pg.png,False
+16,6,Paraguay,py,HARD,py.png,False
+16,7,Peru,pe,HARD,pe.png,False
+16,8,Qatar,qa,HARD,qa.png,False
+16,9,Romania,ro,HARD,ro.png,False
+16,10,Antarctica,aq,HARD,aq.png,False
+17,1,Rwanda,rw,VERY_HARD,rw.png,False
+17,2,Saint Kitts and Nevis,kn,VERY_HARD,kn.png,False
+17,3,Saint Lucia,lc,VERY_HARD,lc.png,False
+17,4,Saint Vincent and the Grenadines,vc,VERY_HARD,vc.png,False
+17,5,Samoa,ws,VERY_HARD,ws.png,False
+17,6,San Marino,sm,VERY_HARD,sm.png,False
+17,7,Senegal,sn,VERY_HARD,sn.png,False
+17,8,Seychelles,sc,VERY_HARD,sc.png,False
+17,9,Sierra Leone,sl,VERY_HARD,sl.png,False
+17,10,Singapore,sg,VERY_HARD,sg.png,False
+18,1,Slovakia,sk,VERY_HARD,sk.png,False
+18,2,Slovenia,si,VERY_HARD,si.png,False
+18,3,Solomon Islands,sb,VERY_HARD,sb.png,False
+18,4,Somalia,so,VERY_HARD,so.png,False
+18,5,South Sudan,ss,VERY_HARD,ss.png,False
+18,6,Sri Lanka,lk,VERY_HARD,lk.png,False
+18,7,Sudan,sd,VERY_HARD,sd.png,False
+18,8,Suriname,sr,VERY_HARD,sr.png,False
+18,9,Syria,sy,VERY_HARD,sy.png,False
+18,10,Macau,mo,VERY_HARD,mo.png,False
+19,1,Sao Tome and Principe,st,VERY_HARD,st.png,False
+19,2,Tajikistan,tj,VERY_HARD,tj.png,False
+19,3,Tanzania,tz,VERY_HARD,tz.png,False
+19,4,Timor Leste,tl,VERY_HARD,tl.png,False
+19,5,Togo,tg,VERY_HARD,tg.png,False
+19,6,Tonga,to,VERY_HARD,to.png,False
+19,7,Trinidad and Tobago,tt,VERY_HARD,tt.png,False
+19,8,Tunisia,tn,VERY_HARD,tn.png,False
+19,9,Turkmenistan,tm,VERY_HARD,tm.png,False
+19,10,Tuvalu,tv,VERY_HARD,tv.png,False
+20,1,Uganda,ug,EXPERT,ug.png,False
+20,2,Uruguay,uy,EXPERT,uy.png,False
+20,3,Uzbekistan,uz,EXPERT,uz.png,False
+20,4,Vanuatu,vu,EXPERT,vu.png,False
+20,5,Vatican City,va,EXPERT,va.png,False
+20,6,Venezuela,ve,EXPERT,ve.png,False
+20,7,Yemen,ye,EXPERT,ye.png,False
+20,8,Zambia,zm,EXPERT,zm.png,False
+20,9,Zimbabwe,zw,EXPERT,zw.png,False
+20,10,Taiwan,tw,EXPERT,tw.png,False

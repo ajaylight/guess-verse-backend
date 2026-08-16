@@ -1,0 +1,2 @@
+ALTER TABLE flag_questions
+    ADD COLUMN level INT NOT NULL DEFAULT 1;

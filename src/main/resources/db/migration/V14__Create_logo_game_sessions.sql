@@ -1,0 +1,10 @@
+CREATE TABLE logo_game_sessions (
+    id UUID PRIMARY KEY,
+    question_id BIGINT NOT NULL,
+    score INTEGER NOT NULL DEFAULT 100,
+    hints_used INTEGER NOT NULL DEFAULT 0,
+    attempts INTEGER NOT NULL DEFAULT 0,
+    completed BOOLEAN NOT NULL DEFAULT FALSE,
+    started_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    completed_at TIMESTAMP
+);

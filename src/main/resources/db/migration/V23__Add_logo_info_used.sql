@@ -1,0 +1,2 @@
+ALTER TABLE logo_game_sessions
+    ADD COLUMN info_used BOOLEAN NOT NULL DEFAULT FALSE;
