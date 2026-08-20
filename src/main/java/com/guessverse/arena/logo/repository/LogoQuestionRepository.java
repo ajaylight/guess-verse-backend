@@ -7,7 +7,6 @@ import org.springframework.data.repository.query.Param;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.UUID;
 
 public interface LogoQuestionRepository
         extends JpaRepository<LogoQuestion, Long> {
@@ -58,6 +57,4 @@ public interface LogoQuestionRepository
             @Param("difficulty") String difficulty,
             @Param("ids") List<Long> ids
     );
-
-    Optional<LogoQuestion> findByImageKey(UUID imageKey);
 }
