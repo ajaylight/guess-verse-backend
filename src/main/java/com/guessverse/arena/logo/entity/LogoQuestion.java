@@ -20,12 +20,13 @@ public class LogoQuestion {
     private Long id;
 
     /**
-     * Logo image URL or relative path
-     * Example:
-     * /logos/nike.png
+     * Logo.dev company domain used internally by the backend.
+     * Example: nike.com
+     *
+     * This field is never exposed in the normal question DTO.
      */
-    @Column(nullable = false)
-    private String imageName;;
+    @Column(name = "image_domain", nullable = false)
+    private String imageDomain;
 
     /**
      * Correct answer
