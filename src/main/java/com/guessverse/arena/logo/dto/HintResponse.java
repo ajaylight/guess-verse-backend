@@ -23,5 +23,15 @@ public class HintResponse {
 
     private String answer;
 
+    private String imageId;
+
+    private Integer totalScore;
+
+    private Integer questionNumber;
+
+    private Boolean correct;
+
+    private Boolean gameCompleted;
+
     private QuestionRevealResponse reveal;
 }
