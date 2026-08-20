@@ -2,7 +2,7 @@ spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/guessverse
     username: postgres
-    password: Lokesh@#9090
+    password: ${DB_PASSWORD}
 
   jpa:
     hibernate:
@@ -22,3 +22,7 @@ server:
 logging:
   level:
     org.springframework.web: DEBUG
+
+logo:
+  dev:
+    publishable-key: ${LOGO_DEV_PUBLISHABLE_KEY:}
