@@ -24,4 +24,6 @@ public class FlagQuestionResponse {
     private Integer level;
 
     private String revealedText;
+
+    private List<Integer> spacePositions;
 }

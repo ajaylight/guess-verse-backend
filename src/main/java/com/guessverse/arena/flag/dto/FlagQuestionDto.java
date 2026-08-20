@@ -18,4 +18,6 @@ public class FlagQuestionDto {
     private List<String> letters;
 
     private String difficulty;
+
+    private List<Integer> spacePositions;
 }

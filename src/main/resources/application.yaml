@@ -1,8 +1,8 @@
 spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/guessverse
-    username: ${DB_USERNAME:postgres}
-    password: ${DB_PASSWORD}
+    username: postgres
+    password: Lokesh@#9090
 
   jpa:
     hibernate:

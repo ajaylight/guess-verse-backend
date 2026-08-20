@@ -1,0 +1,274 @@
+id,food
+1,Biryani
+2,Hyderabadi Biryani
+3,Lucknowi Biryani
+4,Kolkata Biryani
+5,Chicken Biryani
+6,Mutton Biryani
+7,Egg Biryani
+8,Butter Chicken
+9,Chicken Tikka
+10,Chicken Tikka Masala
+11,Tandoori Chicken
+12,Chicken Korma
+13,Chicken Chettinad
+14,Chicken 65
+15,Kadai Chicken
+16,Chicken Curry
+17,Mutton Rogan Josh
+18,Mutton Korma
+19,Mutton Curry
+20,Laal Maas
+21,Keema Matar
+22,Goat Curry
+23,Fish Curry
+24,Goan Fish Curry
+25,Kerala Fish Curry
+26,Amritsari Fish
+27,Fish Fry
+28,Prawn Curry
+29,Malai Prawn
+30,Tandoori Prawns
+31,Paneer Tikka
+32,Paneer Butter Masala
+33,Kadai Paneer
+34,Palak Paneer
+35,Shahi Paneer
+36,Matar Paneer
+37,Paneer Do Pyaza
+38,Paneer Bhurji
+39,Malai Kofta
+40,Kofta Curry
+41,Chole
+42,Chole Bhature
+43,Rajma
+44,Rajma Chawal
+45,Dal Makhani
+46,Dal Tadka
+47,Dal Fry
+48,Dal Baati Churma
+49,Kadhi
+50,Kadhi Pakora
+51,Aloo Gobi
+52,Aloo Matar
+53,Aloo Jeera
+54,Dum Aloo
+55,Baingan Bharta
+56,Bhindi Masala
+57,Navratan Korma
+58,Sarson Saag
+59,Chana Masala
+60,Pav Bhaji
+61,Vada Pav
+62,Misal Pav
+63,Dabeli
+64,Bhel Puri
+65,Sev Puri
+66,Pani Puri
+67,Dahi Puri
+68,Ragda Pattice
+69,Samosa
+70,Kachori
+71,Pyaz Kachori
+72,Pakora
+73,Onion Bhaji
+74,Bread Pakora
+75,Mirchi Bajji
+76,Aloo Tikki
+77,Hara Bhara Kebab
+78,Dhokla
+79,Khandvi
+80,Fafda Jalebi
+81,Thepla
+82,Khakhra
+83,Handvo
+84,Undhiyu
+85,Masala Dosa
+86,Plain Dosa
+87,Mysore Masala Dosa
+88,Rava Dosa
+89,Set Dosa
+90,Neer Dosa
+91,Uttapam
+92,Idli
+93,Medu Vada
+94,Masala Vada
+95,Pongal
+96,Upma
+97,Poha
+98,Sabudana Khichdi
+99,Pesarattu
+100,Appam
+101,Idiyappam
+102,Puttu
+103,Malabar Parotta
+104,Kerala Parotta
+105,Paratha
+106,Aloo Paratha
+107,Gobi Paratha
+108,Paneer Paratha
+109,Methi Paratha
+110,Poori
+111,Bhatura
+112,Naan
+113,Butter Naan
+114,Garlic Naan
+115,Tandoori Roti
+116,Rumali Roti
+117,Missi Roti
+118,Kulcha
+119,Amritsari Kulcha
+120,Kathi Roll
+121,Frankie
+122,Bombay Sandwich
+123,Masala Sandwich
+124,Dahi Vada
+125,Papdi Chaat
+126,Aloo Chaat
+127,Fruit Chaat
+128,Litti Chokha
+129,Sattu Paratha
+130,Momos
+131,Thukpa
+132,Hyderabadi Haleem
+133,Nihari
+134,Paya
+135,Kosha Mangsho
+136,Kashmiri Dum Aloo
+137,Kashmiri Pulao
+138,Yakhni
+139,Goan Vindaloo
+140,Prawn Balchao
+141,Gulab Jamun
+142,Jalebi
+143,Rasgulla
+144,Rasmalai
+145,Kaju Katli
+146,Barfi
+147,Motichoor Ladoo
+148,Besan Ladoo
+149,Boondi Ladoo
+150,Gajar Halwa
+151,Moong Dal Halwa
+152,Sooji Halwa
+153,Malpua
+154,Rabri
+155,Kulfi
+156,Falooda
+157,Kheer
+158,Phirni
+159,Shrikhand
+160,Basundi
+161,Mysore Pak
+162,Payasam
+163,Ada Pradhaman
+164,Modak
+165,Peda
+166,Sandesh
+167,Cham Cham
+168,Soan Papdi
+169,Puran Poli
+170,Sutarfeni
+171,Jalebi Rabri
+172,Chicken Shawarma
+173,Chicken Roll
+174,Chicken Kebab
+175,Chicken Lollipop
+176,Chicken Manchurian
+177,Chilli Chicken
+178,Chicken Fried Rice
+179,Egg Fried Rice
+180,Veg Fried Rice
+181,Hakka Noodles
+182,Chicken Noodles
+183,Chow Mein
+184,Spring Roll
+185,Manchurian
+186,Chilli Paneer
+187,Paneer Chilli
+188,Paneer Lababdar
+189,Mushroom Masala
+190,Soya Chaap
+191,Matar Kulcha
+192,Chole Kulche
+193,Dal Khichdi
+194,Veg Pulao
+195,Jeera Rice
+196,Lemon Rice
+197,Tomato Rice
+198,Sambar Rice
+199,Curd Rice
+200,Bisi Bele Bath
+201,Rasam Rice
+202,Tamarind Rice
+203,Ragi Mudde
+204,Sambar
+205,Vada Sambar
+206,Idli Sambar
+207,Rasam
+208,Ven Pongal
+209,Mangalore Buns
+210,Kori Rotti
+211,Chicken Ghee Roast
+212,Mangalorean Fish Curry
+213,Amritsari Fish Tikka
+214,Tandoori Fish
+215,Dal Bukhara
+216,Pindi Chole
+217,Aloo Puri
+218,Makke Di Roti
+219,Shorshe Ilish
+220,Macher Jhol
+221,Luchi
+222,Aloo Posto
+223,Matar Kachori
+224,Khaman
+225,Dal Dhokli
+226,Patra
+227,Muthiya
+228,Sabudana Vada
+229,Thalipeeth
+230,Bombay Duck Fry
+231,Kolhapuri Misal
+232,Kolhapuri Chicken
+233,Bharli Vangi
+234,Chicken Burger
+235,Veg Burger
+236,Chicken Sandwich
+237,Veg Sandwich
+238,Paneer Roll
+239,Veg Roll
+240,Shawarma
+241,Cheese Sandwich
+242,Garlic Bread
+243,French Fries
+244,Peri Peri Fries
+245,Nachos
+246,Pizza
+247,Margherita Pizza
+248,Paneer Pizza
+249,Burger
+250,Pasta
+251,White Sauce Pasta
+252,Red Sauce Pasta
+253,Chicken Wings
+254,Chicken Nuggets
+255,Choco Lava Cake
+256,Cheesecake
+257,Brownie
+258,Mishti Doi
+259,Kaju Pista Barfi
+260,Milk Cake
+261,Kalakand
+262,Ghevar
+263,Balushahi
+264,Imarti
+265,Mohanthal
+266,Petha
+267,Gujia
+268,Anarsa
+269,Chhena Poda
+270,Rajbhog
+271,Kala Jamun
+272,Malai Sandwich
+273,Chicken Frankie

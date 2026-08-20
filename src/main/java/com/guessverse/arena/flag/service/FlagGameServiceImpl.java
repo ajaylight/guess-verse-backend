@@ -12,6 +12,7 @@ import com.guessverse.arena.flag.repository.FlagQuestionRepository;
 import com.guessverse.arena.flag.util.FlagAnswerRules;
 import com.guessverse.arena.flag.util.LetterGenerator;
 import com.guessverse.game.enums.Difficulty;
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import com.guessverse.user.entity.User;
@@ -26,6 +27,7 @@ import java.util.List;
 import java.util.Random;
 import java.util.UUID;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 @Service
 @RequiredArgsConstructor
@@ -101,9 +103,12 @@ public class FlagGameServiceImpl implements FlagGameService {
                         .questionId(question.getId())
                         .imageId("flag-" + question.getId())
                         .answerLength(
-                                normalizeAnswer(
+                                question.getAnswer().length()
+                        )
+                        .spacePositions(
+                                getSpacePositions(
                                         question.getAnswer()
-                                ).length()
+                                )
                         )
                         .difficulty(
                                 question.getDifficulty().name()
@@ -221,10 +226,8 @@ public class FlagGameServiceImpl implements FlagGameService {
                         .questionId(question.getId())
                         .imageId("flag-" + question.getId())
                         .answerLength(
-                                normalizeAnswer(
-                                        question.getAnswer()
-                                ).length()
-                        )
+                question.getAnswer().length()
+        )
                         .difficulty(
                                 question.getDifficulty().name()
                         )
@@ -351,8 +354,13 @@ public class FlagGameServiceImpl implements FlagGameService {
                 levelComplete &&
                         session.getLevel() >= 20;
 
-        if (gameComplete) {
+// Unlock the next level immediately when Q10
+// completes the current level.
+        if (levelComplete && !gameComplete) {
+            unlockNextLevel(session.getLevel());
+        }
 
+        if (gameComplete) {
             session.setCompleted(true);
             session.setAwaitingContinue(false);
             session.setCompletedAt(
@@ -398,9 +406,8 @@ public class FlagGameServiceImpl implements FlagGameService {
     // =========================================================
 
     @Override
-    public FlagQuestionResponse continueGame(
-            UUID sessionId
-    ) {
+    @Transactional
+    public FlagQuestionResponse continueGame(UUID sessionId) {
 
         FlagGameSession session =
                 getSession(sessionId);
@@ -523,6 +530,7 @@ public class FlagGameServiceImpl implements FlagGameService {
     // =========================================================
 
     @Override
+    @Transactional
     public FlagQuestionResponse replayLevel(
             UUID sessionId
     ) {
@@ -551,6 +559,7 @@ public class FlagGameServiceImpl implements FlagGameService {
 
         session.setCurrentQuestion(1);
 
+
         session.setCurrentQuestionReward(100);
 
         session.setHintsUsed(0);
@@ -571,6 +580,7 @@ public class FlagGameServiceImpl implements FlagGameService {
 
         session.setAwaitingContinue(false);
         session.setCompleted(false);
+        session.setCompletedAt(null);
 
         FlagQuestion question =
                 findQuestionForLevel(
@@ -805,7 +815,12 @@ public class FlagGameServiceImpl implements FlagGameService {
                 session.getCurrentQuestion()
                         >= session.getTotalQuestions();
 
+        if (levelComplete) {
+            unlockNextLevel(session.getLevel());
+        }
+
         sessionRepository.save(session);
+
 
         QuestionRevealResponse reveal =
                 QuestionRevealResponse.builder()
@@ -927,20 +942,20 @@ public class FlagGameServiceImpl implements FlagGameService {
                         .getContext()
                         .getAuthentication();
 
-        if (authentication == null ||
-                !authentication.isAuthenticated()) {
+        if (
+                authentication == null
+                        || !authentication.isAuthenticated()
+                        || "anonymousUser".equals(
+                        authentication.getPrincipal()
+                )
+        ) {
             return null;
         }
 
-        Object principal =
-                authentication.getPrincipal();
-
-        if (!(principal instanceof UserDetails userDetails)) {
-            return null;
-        }
+        String email = authentication.getName();
 
         return userRepository
-                .findByEmail(userDetails.getUsername())
+                .findByEmail(email)
                 .orElse(null);
     }
 
@@ -1137,6 +1152,8 @@ public class FlagGameServiceImpl implements FlagGameService {
                 .collect(Collectors.joining(","));
     }
 
+
+
     private String buildRevealedText(
             FlagQuestion question,
             String revealedPositions
@@ -1288,14 +1305,30 @@ public class FlagGameServiceImpl implements FlagGameService {
                 .imageId("flag-" + question.getId())
                 .level(session.getLevel())
                 .answerLength(
-                        normalizeAnswer(
+                question.getAnswer().length()
+
+        )
+                .spacePositions(
+                        getSpacePositions(
                                 question.getAnswer()
-                        ).length()
+                        )
                 )
                 .letters(
                         deserializeLetterBank(
                                 session.getCurrentLetterBank()
                         )
+                )
+
+                .spacePositions(
+                        IntStream.range(
+                                        0,
+                                        question.getAnswer().length()
+                                )
+                                .filter(
+                                        i -> question.getAnswer().charAt(i) == ' '
+                                )
+                                .boxed()
+                                .toList()
                 )
                 .score(session.getTotalScore())
 
@@ -1452,6 +1485,30 @@ public class FlagGameServiceImpl implements FlagGameService {
                         letterBank.split(",")
                 )
         );
+    }
+    private List<Integer> getSpacePositions(
+            String answer
+    ) {
+        List<Integer> positions =
+                new ArrayList<>();
+
+        if (answer == null) {
+            return positions;
+        }
+
+        for (
+                int index = 0;
+                index < answer.length();
+                index++
+        ) {
+            if (Character.isWhitespace(
+                    answer.charAt(index)
+            )) {
+                positions.add(index);
+            }
+        }
+
+        return positions;
     }
 
 

@@ -11,6 +11,7 @@ import com.guessverse.arena.logo.repository.LogoPlayerProgressRepository;
 import com.guessverse.arena.logo.repository.LogoQuestionRepository;
 import com.guessverse.arena.logo.util.LetterGenerator;
 import com.guessverse.game.enums.Difficulty;
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import com.guessverse.user.entity.User;
@@ -333,6 +334,12 @@ public class LogoGameServiceImpl implements LogoGameService {
                 session.getCurrentQuestion()
                         >= session.getTotalQuestions();
 
+// Unlock next level immediately when Q10
+// completes the current level.
+        if (levelComplete) {
+            unlockNextLevel(session.getLevel());
+        }
+
         sessionRepository.save(session);
 
         QuestionRevealResponse reveal =
@@ -369,9 +376,8 @@ public class LogoGameServiceImpl implements LogoGameService {
     // =========================================================
 
     @Override
-    public LogoQuestionResponse continueGame(
-            UUID sessionId
-    ) {
+    @Transactional
+    public LogoQuestionResponse continueGame(UUID sessionId) {
 
         LogoGameSession session =
                 getSession(sessionId);
@@ -734,6 +740,10 @@ public class LogoGameServiceImpl implements LogoGameService {
                 session.getCurrentQuestion()
                         >= session.getTotalQuestions();
 
+        if (levelComplete) {
+            unlockNextLevel(session.getLevel());
+        }
+
         sessionRepository.save(session);
 
         QuestionRevealResponse reveal =
@@ -856,20 +866,20 @@ public class LogoGameServiceImpl implements LogoGameService {
                         .getContext()
                         .getAuthentication();
 
-        if (authentication == null ||
-                !authentication.isAuthenticated()) {
+        if (
+                authentication == null
+                        || !authentication.isAuthenticated()
+                        || "anonymousUser".equals(
+                        authentication.getPrincipal()
+                )
+        ) {
             return null;
         }
 
-        Object principal =
-                authentication.getPrincipal();
-
-        if (!(principal instanceof UserDetails userDetails)) {
-            return null;
-        }
+        String email = authentication.getName();
 
         return userRepository
-                .findByEmail(userDetails.getUsername())
+                .findByEmail(email)
                 .orElse(null);
     }
 
@@ -1315,6 +1325,8 @@ public class LogoGameServiceImpl implements LogoGameService {
                 )
         );
     }
+
+
 
 
 }
