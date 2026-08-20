@@ -7,13 +7,10 @@ import org.springframework.data.repository.query.Param;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 
 public interface LogoQuestionRepository
         extends JpaRepository<LogoQuestion, Long> {
-
-    // -----------------------------------------
-    // Any active question
-    // -----------------------------------------
 
     @Query(value = """
             SELECT *
@@ -23,11 +20,6 @@ public interface LogoQuestionRepository
             LIMIT 1
             """, nativeQuery = true)
     Optional<LogoQuestion> findRandomQuestion();
-
-
-    // -----------------------------------------
-    // Question by difficulty
-    // -----------------------------------------
 
     @Query(value = """
             SELECT *
@@ -41,11 +33,6 @@ public interface LogoQuestionRepository
             @Param("difficulty") String difficulty
     );
 
-
-    // -----------------------------------------
-    // Unused question
-    // -----------------------------------------
-
     @Query(value = """
             SELECT *
             FROM logo_questions
@@ -57,11 +44,6 @@ public interface LogoQuestionRepository
     Optional<LogoQuestion> findRandomUnused(
             @Param("ids") List<Long> ids
     );
-
-
-    // -----------------------------------------
-    // Unused question by difficulty
-    // -----------------------------------------
 
     @Query(value = """
             SELECT *
@@ -76,4 +58,6 @@ public interface LogoQuestionRepository
             @Param("difficulty") String difficulty,
             @Param("ids") List<Long> ids
     );
+
+    Optional<LogoQuestion> findByImageKey(UUID imageKey);
 }
