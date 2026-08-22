@@ -57,4 +57,30 @@ public interface LogoQuestionRepository
             @Param("difficulty") String difficulty,
             @Param("ids") List<Long> ids
     );
+
+    @Query(value = """
+            SELECT *
+            FROM logo_questions
+            WHERE active = true
+              AND level = :level
+            ORDER BY RANDOM()
+            LIMIT 1
+            """, nativeQuery = true)
+    Optional<LogoQuestion> findRandomQuestionByLevel(
+            @Param("level") Integer level
+    );
+
+    @Query(value = """
+            SELECT *
+            FROM logo_questions
+            WHERE active = true
+              AND level = :level
+              AND id NOT IN (:ids)
+            ORDER BY RANDOM()
+            LIMIT 1
+            """, nativeQuery = true)
+    Optional<LogoQuestion> findRandomUnusedByLevel(
+            @Param("level") Integer level,
+            @Param("ids") List<Long> ids
+    );
 }
