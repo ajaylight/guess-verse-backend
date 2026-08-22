@@ -43,6 +43,10 @@ public class LogoQuestion {
     @Column(nullable = false)
     private Difficulty difficulty;
 
+
+    @Column(nullable = false)
+    private Integer level;
+
     @Builder.Default
     @Column(nullable = false)
     private Boolean active = true;

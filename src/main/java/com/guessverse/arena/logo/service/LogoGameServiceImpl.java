@@ -333,9 +333,15 @@ public class LogoGameServiceImpl implements LogoGameService {
 
         if (!Boolean.TRUE.equals(session.getAnswerRevealed())) {
             session.setAnswerRevealed(true);
+
+            // Reveal Answer awards exactly 20 points.
             session.setCurrentQuestionReward(20);
+            session.setTotalScore(session.getTotalScore() + 20);
+
             session.setHintsUsed(session.getHintsUsed() + 1);
-            session.setTotalAnswersRevealed(session.getTotalAnswersRevealed() + 1);
+            session.setTotalAnswersRevealed(
+                    session.getTotalAnswersRevealed() + 1
+            );
         }
 
         // The answer has now been revealed, so the player is allowed to continue.
@@ -407,23 +413,28 @@ public class LogoGameServiceImpl implements LogoGameService {
     }
 
     private LogoQuestion findQuestionForLevel(int level, List<Long> usedIds) {
-        if (level == 1) return findUnusedByDifficulty(Difficulty.EASY, usedIds);
-        if (level == 2) return findUnusedByDifficulty(Difficulty.MEDIUM, usedIds);
-        if (level == 3) return findUnusedByDifficulty(Difficulty.HARD, usedIds);
 
-        List<Difficulty> shuffled = new ArrayList<>(List.of(Difficulty.EASY, Difficulty.MEDIUM, Difficulty.HARD));
-        Collections.shuffle(shuffled);
-        for (Difficulty difficulty : shuffled) {
-            try {
-                return findUnusedByDifficulty(difficulty, usedIds);
-            } catch (IllegalStateException ignored) {
-            }
+        if (level < 1) {
+            throw new IllegalArgumentException("Level must be at least 1.");
         }
 
-        if (usedIds.isEmpty()) {
-            return questionRepository.findRandomQuestion().orElseThrow(() -> new IllegalStateException("No active logo questions available."));
+        if (usedIds == null || usedIds.isEmpty()) {
+            return questionRepository
+                    .findRandomQuestionByLevel(level)
+                    .orElseThrow(() ->
+                            new IllegalStateException(
+                                    "No active logo questions available for Level " + level
+                            )
+                    );
         }
-        return questionRepository.findRandomUnused(usedIds).orElseThrow(() -> new IllegalStateException("No unused logo questions available."));
+
+        return questionRepository
+                .findRandomUnusedByLevel(level, usedIds)
+                .orElseThrow(() ->
+                        new IllegalStateException(
+                                "No unused logo questions available for Level " + level
+                        )
+                );
     }
 
     private LogoQuestion findUnusedByDifficulty(Difficulty difficulty, List<Long> usedIds) {

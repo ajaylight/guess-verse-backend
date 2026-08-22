@@ -102,18 +102,15 @@ public class FlagGameServiceImpl implements FlagGameService {
                 FlagQuestionDto.builder()
                         .questionId(question.getId())
                         .imageId("flag-" + question.getId())
-                        .answerLength(
-                                question.getAnswer().length()
-                        )
+                        .answerLength(question.getAnswer().length())
                         .spacePositions(
-                                getSpacePositions(
-                                        question.getAnswer()
-                                )
+                                getSpacePositions(question.getAnswer())
                         )
-                        .difficulty(
-                                question.getDifficulty().name()
-                        )
+                        .difficulty(question.getDifficulty().name())
                         .letters(letterBank)
+                        .questionNumber(1)
+                        .level(1)
+                        .score(0)
                         .build();
 
         return StartGameResponse.builder()
@@ -225,13 +222,15 @@ public class FlagGameServiceImpl implements FlagGameService {
                 FlagQuestionDto.builder()
                         .questionId(question.getId())
                         .imageId("flag-" + question.getId())
-                        .answerLength(
-                question.getAnswer().length()
-        )
-                        .difficulty(
-                                question.getDifficulty().name()
+                        .answerLength(question.getAnswer().length())
+                        .spacePositions(
+                                getSpacePositions(question.getAnswer())
                         )
+                        .difficulty(question.getDifficulty().name())
                         .letters(letterBank)
+                        .questionNumber(1)
+                        .level(level)
+                        .score(0)
                         .build();
 
         return StartGameResponse.builder()

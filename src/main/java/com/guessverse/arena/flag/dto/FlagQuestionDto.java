@@ -20,4 +20,10 @@ public class FlagQuestionDto {
     private String difficulty;
 
     private List<Integer> spacePositions;
+
+    private int questionNumber;
+
+    private int level;
+
+    private int score;
 }
